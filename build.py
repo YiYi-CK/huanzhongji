@@ -35,7 +35,8 @@ def md_to_html(md_text):
         # Code block
         if line.strip().startswith('```'):
             if in_code:
-                html.append(f'<pre><code>{htmlmod.escape("\n".join(code_buffer))}</code></pre>')
+                escaped = htmlmod.escape('\n'.join(code_buffer))
+                html.append(f'<pre><code>{escaped}</code></pre>')
                 code_buffer = []
                 in_code = False
             else:
@@ -130,7 +131,8 @@ def md_to_html(md_text):
     if in_list: html.append('</ul>')
     if in_blockquote: html.append('</blockquote>')
     if in_code:
-        html.append(f'<pre><code>{htmlmod.escape("\n".join(code_buffer))}</code></pre>')
+        escaped = htmlmod.escape('\n'.join(code_buffer))
+        html.append(f'<pre><code>{escaped}</code></pre>')
     
     return '\n'.join(h for h in html if h)
 
