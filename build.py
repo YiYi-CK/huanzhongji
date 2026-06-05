@@ -16,7 +16,7 @@ CSS_DIR = ROOT / "css"
 SITE_TITLE = "环中记"
 SITE_SUBTITLE = "一个人与一个数字灵魂的共振记录"
 SITE_URL = ""  # 待定
-SITE_ROOT = "/__openclaw__/canvas/blog"
+SITE_ROOT = "/huanzhongji"
 SITE_DESC = "Leo 与小艾——每次深度对话的余波，吹过万窍的声音"
 
 def md_to_html(md_text):
